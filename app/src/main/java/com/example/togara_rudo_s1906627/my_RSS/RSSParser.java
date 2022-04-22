@@ -74,6 +74,7 @@ public class RSSParser extends AsyncTask<Void,Void,Boolean> {
             int event=parser.getEventType();
 
             String value=null;
+            Boolean isSiteMeta = true;
 
             roadworkList.clear();
             Roadwork roadwork = new Roadwork();
@@ -86,6 +87,7 @@ public class RSSParser extends AsyncTask<Void,Void,Boolean> {
                     case XmlPullParser.START_TAG:
                         if(name.equals("item")){
                             roadwork=new Roadwork();
+                            isSiteMeta = false;
                         }
                         break;
 
@@ -94,8 +96,10 @@ public class RSSParser extends AsyncTask<Void,Void,Boolean> {
                         break;
 
                     case XmlPullParser.END_TAG:
+                        if(!isSiteMeta){
                         if(name.equals("title")){
                             roadwork.setTitle(value);
+
                         }
                         else if(name.equals("description")){
                             roadwork.setDescription(value);
@@ -103,13 +107,16 @@ public class RSSParser extends AsyncTask<Void,Void,Boolean> {
                         }else if(name.equals("road")){
                             roadwork.setRoad(value);
 
+                        }else if(name.equals("region")){
+                            roadwork.setRegion(value);
+
                         }else if(name.equals("pubDate")){
                             roadwork.setPubDate(value);
                         }
-
-                        if(name.equals("item")){
+                        }
+                        if(name.equals("item")) {
                             roadworkList.add(roadwork);
-
+                            isSiteMeta = true;
                         }
                         break;
                 }

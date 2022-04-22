@@ -1,5 +1,9 @@
 package com.example.togara_rudo_s1906627;
 
+/* Rudo Courtney Togara
+ * S1906627
+ * Mobile Platform Development Coursework 1
+ * */
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -30,6 +34,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.togara_rudo_s1906627.my_DetailActivity.DetailActivity;
 import com.example.togara_rudo_s1906627.my_RSS.Downloader;
 import com.example.togara_rudo_s1906627.my_UI.CustomAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -46,9 +51,7 @@ public class MainActivity extends AppCompatActivity{
     EditText endDateValue;
     Spinner searchBySpinner;
     int tYear, tMonth, tDay;
-
     SearchView searchView;
-    ListView listViewRss;
     ArrayAdapter<String> arrayAdapter;
 
     ListView lv;
@@ -59,19 +62,16 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
         Button openRoadWorks = (Button) findViewById(R.id.openRoadWorks);
+
 
         lv = (ListView) findViewById(R.id.lv);
 
-
         Log.e("MyTag", "in onCreate");
-
-        listViewRss = (ListView) findViewById(R.id.listViewRss);
 
         searchView = findViewById(R.id.search_bar);
 
-        //arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
-        //listViewRss.setAdapter(arrayAdapter);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity{
             public boolean onQueryTextChange(String newText) {
 
 
-                MainActivity.this.arrayAdapter.getFilter().filter(newText);
+                //MainActivity.this..getFilter().filter(newText);
+                MainActivity.this.lv.getTextFilter();
                 return false;
             }
         });

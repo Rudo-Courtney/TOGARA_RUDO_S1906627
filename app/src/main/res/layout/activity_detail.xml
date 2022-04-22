@@ -12,6 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
+    <include layout="@layout/content_detail"
+        android:id="@+id/allInfo"/>
+
         <include layout="@layout/homescreen"
             android:id="@+id/homePage"/>
 
@@ -25,12 +28,13 @@
             android:id="@+id/roadworksInfo"/>
 
         <include
+            android:id="@+id/mapId"
             layout="@layout/map"
-            android:id="@+id/mapId"/>
+            android:layout_width="0dp"
+            android:layout_height="9dp" />
 
         <include layout="@layout/homescreen"
             android:id="@+id/clickBack"/>
-
 
     </ViewFlipper>
 

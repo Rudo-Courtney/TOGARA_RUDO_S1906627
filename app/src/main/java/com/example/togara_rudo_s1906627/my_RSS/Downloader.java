@@ -1,5 +1,9 @@
 package com.example.togara_rudo_s1906627.my_RSS;
 
+/* Rudo Courtney Togara
+* S1906627
+* Mobile Platform Development Coursework 1
+* */
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -50,7 +54,7 @@ public class Downloader extends AsyncTask<Void,Void,Object> {
         {
             Toast.makeText(c, data.toString(), Toast.LENGTH_SHORT).show();
         }else{
-            //parse
+            //parse the data
             new RSSParser(c,(InputStream) data,lv).execute();
         }
 

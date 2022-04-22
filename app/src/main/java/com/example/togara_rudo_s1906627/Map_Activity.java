@@ -18,6 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Map_Activity extends FragmentActivity implements OnMapReadyCallback {
     Button openMap;
+
     GoogleMap map;
     ViewFlipper viewFlipper;
     @Override
@@ -25,12 +26,9 @@ public class Map_Activity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
 
-        openMap = (Button) findViewById(R.id.openMap);
-        openMap.setOnClickListener((View.OnClickListener) this);
-
         viewFlipper = findViewById(R.id.viewFlipper);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+       SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -45,15 +43,5 @@ public class Map_Activity extends FragmentActivity implements OnMapReadyCallback
 
     public void showMap(View view) {
         viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.mapId)));
-    }
-    public void onClick(View v)
-    {
-        Log.e("MyTag","in onClick");
-        Log.e("MyTag","after startProgress");
-
-        if(v==openMap)
-        {
-            viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.mapId)));
-        }
     }
 }

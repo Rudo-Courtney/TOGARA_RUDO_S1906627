@@ -6,8 +6,9 @@
     card_view:cardCornerRadius="10dp"
     card_view:cardElevation="5dp"
     android:layout_width="match_parent"
-    android:layout_height="220dp"
+    android:layout_height="170dp"
     android:orientation="horizontal"
+    android:background="@drawable/shape_list"
     >
 
     <LinearLayout
