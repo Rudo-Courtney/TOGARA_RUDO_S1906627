@@ -1,5 +1,9 @@
 package com.example.togara_rudo_s1906627.my_RSS;
 
+/* Rudo Courtney Togara
+ * S1906627
+ * Mobile Platform Development Coursework 1
+ * */
 
 import android.app.ProgressDialog;
 import android.content.Context;

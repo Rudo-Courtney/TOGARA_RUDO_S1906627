@@ -1,5 +1,8 @@
 package com.example.togara_rudo_s1906627.my_RSS;
-
+/* Rudo Courtney Togara
+ * S1906627
+ * Mobile Platform Development Coursework 1
+ * */
 public class ErrorTracker {
 
     public final static String WRONG_URL_FORMAT="Error: Wrong URL Format";

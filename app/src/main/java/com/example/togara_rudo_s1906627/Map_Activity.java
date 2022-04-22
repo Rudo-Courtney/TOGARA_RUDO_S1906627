@@ -1,5 +1,10 @@
 package com.example.togara_rudo_s1906627;
 
+/* Rudo Courtney Togara
+ * S1906627
+ * Mobile Platform Development Coursework 1
+ * */
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

@@ -1,5 +1,9 @@
 package com.example.togara_rudo_s1906627.my_DataObject;
 
+/* Rudo Courtney Togara
+ * S1906627
+ * Mobile Platform Development Coursework 1
+ * */
 
 public class Roadwork {
     private String title;
@@ -13,7 +17,7 @@ public class Roadwork {
     private String startDate;
     private String endDate;
 
-    // Default Constructor
+
     public Roadwork(String title, String description, String road, String pubDate,String region, String county, String latitude, String longitude, String startDate, String endDate)
     {
         this.title="";
