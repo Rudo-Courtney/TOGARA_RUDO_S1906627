@@ -111,13 +111,16 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="50sp">
+        android:layout_height="50sp"
+        android:layout_marginTop="30dp">
+
         <Button
             android:id="@+id/openByDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:layout_marginLeft="280sp"
+
             android:textColor="@color/White"
             android:backgroundTint="@color/DodgerBlue"
             android:text="View BY DATE"
@@ -130,19 +133,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/openMap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:layout_marginLeft="280sp"
-            android:textColor="@color/White"
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            app:icon="@drawable/ic_map"
-            android:backgroundTint="@color/DodgerBlue"
-            android:text="View ON MAP"
-            android:onClick="showMap"
-            android:textSize="20sp" />
+
     </LinearLayout>
 
 

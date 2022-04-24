@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
@@ -56,7 +57,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView titleTxt = (TextView) convertView.findViewById(R.id.titleTxt);
         TextView descTxt = (TextView) convertView.findViewById(R.id.descTxt);
         TextView roadTxt = (TextView) convertView.findViewById(R.id.roadTxt);
-        TextView pubDate = (TextView) convertView.findViewById(R.id.pubDate);
+        TextView dateTxt = (TextView) convertView.findViewById(R.id.dateTxt);
 
 
         Roadwork roadwork= (Roadwork) this.getItem(position);
@@ -70,14 +71,14 @@ public class CustomAdapter extends BaseAdapter {
         titleTxt.setText(title);
         descTxt.setText(desc);
         roadTxt.setText(road);
-        pubDate.setText(date);
+        dateTxt.setText(date);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
                 //Open the detailed activity
-                openDetailActivity(title, desc, road, region, date);
+                openDetailActivity(title,desc,road,region,date);
 
                 Toast.makeText(c,roadwork.getTitle(),Toast.LENGTH_SHORT).show();
             }

@@ -33,7 +33,7 @@ public class RSSParser extends AsyncTask<Void,Void,Boolean> {
     ListView lv;
 
     ProgressDialog pd;
-    ArrayList<Roadwork> roadworkList = new ArrayList<>();
+    public static ArrayList<Roadwork> roadworkList = new ArrayList<>();
 
     public RSSParser(Context c, InputStream is, ListView lv) {
         this.c = c;
@@ -62,7 +62,6 @@ public class RSSParser extends AsyncTask<Void,Void,Boolean> {
         pd.dismiss();
 
         if(isParsed){
-            //Bind
             lv.setAdapter(new CustomAdapter(c, roadworkList));
         }else{
             Toast.makeText(c, "Cannot parse", Toast.LENGTH_SHORT).show();

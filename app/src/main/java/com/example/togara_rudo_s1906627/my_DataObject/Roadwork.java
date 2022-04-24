@@ -5,7 +5,9 @@ package com.example.togara_rudo_s1906627.my_DataObject;
  * Mobile Platform Development Coursework 1
  * */
 
-public class Roadwork {
+import java.io.Serializable;
+
+public class Roadwork  implements Serializable {
     private String title;
     private String description;
     private String road;

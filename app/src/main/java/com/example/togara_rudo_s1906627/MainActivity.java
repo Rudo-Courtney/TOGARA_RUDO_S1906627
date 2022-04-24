@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.view.MenuItem;
 import android.util.Log;
 import android.view.Menu;
@@ -36,7 +37,9 @@ import android.widget.ViewFlipper;
 
 import com.example.togara_rudo_s1906627.my_DetailActivity.DetailActivity;
 import com.example.togara_rudo_s1906627.my_RSS.Downloader;
+import com.example.togara_rudo_s1906627.my_RSS.RSSParser;
 import com.example.togara_rudo_s1906627.my_UI.CustomAdapter;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
@@ -53,7 +56,6 @@ public class MainActivity extends AppCompatActivity{
     int tYear, tMonth, tDay;
     SearchView searchView;
     ArrayAdapter<String> arrayAdapter;
-
     ListView lv;
     final static String urlString ="http://m.highwaysengland.co.uk/feeds/rss/CurrentAndFutureEvents.xml";
     @Override
@@ -62,38 +64,60 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
         Button openRoadWorks = (Button) findViewById(R.id.openRoadWorks);
+        Button goToMap = (Button) findViewById(R.id.goToMap);
 
 
         lv = (ListView) findViewById(R.id.lv);
 
         Log.e("MyTag", "in onCreate");
 
+        //Code for the search view for the roadworks
         searchView = findViewById(R.id.search_bar);
-
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
                 MainActivity.this.arrayAdapter.getFilter().filter(query);
-                return false;
+                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
-
-                //MainActivity.this..getFilter().filter(newText);
                 MainActivity.this.lv.getTextFilter();
                 return false;
             }
         });
 
+        goToMap.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View view){
+                viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.mapId)));
+            }
+        });
 
+        //OnClickListener for the opening of the roadworks list view
+        openRoadWorks.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View view){
+                new Downloader(MainActivity.this,urlString,lv).execute();
+                viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.roadworksInfo)));
+            }
+        });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                Log.d("MainActivity", "onItemClick: ");
+                //intent.putExtra("TITLE_KEY", RSSParser.roadworkList.get(i));
+                startActivity(intent);
+
+            }
+        });
+
+        //Edit text for entering the startdate and enddate
         startDateValue = findViewById(R.id.startDateValue);
-
 
         endDateValue = findViewById(R.id.endDateValue);
 
@@ -108,12 +132,7 @@ public class MainActivity extends AppCompatActivity{
         Log.e("MyTag", "after startButton");
     }
 
-
-    public void showRoadworks(View view) {
-        new Downloader(MainActivity.this,urlString,lv).execute();
-        viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.roadworksInfo)));
-    }
-
+    //function definitions for all the functions
     public void showBack(View view) {
         viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.clickBack)));
     }
@@ -124,16 +143,19 @@ public class MainActivity extends AppCompatActivity{
         viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.homePage)));
     }
     public void viewByDate(View view) {
+
         viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.viewRoadwork)));
     }
-
+    public void showMap(View view) {
+        viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.mapId)));
+    }
     public void showStartDate(View view) {
         final Calendar calendar = Calendar.getInstance();
         tYear = calendar.get(Calendar.YEAR);
         tMonth = calendar.get(Calendar.MONTH);
         tDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        //show dialog
+        //show dialog for interacting on screen to select start date
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -159,7 +181,7 @@ public class MainActivity extends AppCompatActivity{
         tMonth = calendar.get(Calendar.MONTH);
         tDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        //show dialog
+        //show to specify the end date
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {

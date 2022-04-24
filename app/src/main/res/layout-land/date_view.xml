@@ -24,10 +24,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50sp"
+                android:layout_height="20sp"
                 android:text="ALL ROADWORKS"
                 android:layout_marginLeft="20sp"
-                android:layout_marginTop="20sp"
+                android:layout_marginTop="15sp"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/DodgerBlue"
@@ -44,7 +44,7 @@
             <ListView
                 android:id="@+id/list"
                 android:layout_width="wrap_content"
-                android:layout_height="400dp"
+                android:layout_height="150dp"
                 android:padding="10sp"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
@@ -58,7 +58,7 @@
                 android:layout_width="250sp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10sp"
+                android:layout_margin="5sp"
                 android:backgroundTint="@color/DodgerBlue"
                 android:text="Back To Start"
                 android:onClick="showBack"

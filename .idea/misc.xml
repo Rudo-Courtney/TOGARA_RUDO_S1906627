@@ -6,6 +6,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/drawable/shape.xml" value="0.2203125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/drawable/shape_list.xml" value="0.2203125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/drawable/shape_search.xml" value="0.2203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout-land/date_view.xml" value="0.18" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout-land/homescreen.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout-land/model.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout-land/planner.xml" value="0.1728395061728395" />
@@ -13,13 +14,13 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/appbar.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/application_bar.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/content_detail.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/content_detail.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/content_main.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/date_view.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/homescreen.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/map.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/model.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/planner.xml" value="0.6282894736842105" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/planner.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/layout/views.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TOGARA_RUDO_S19066272/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
       </map>
